@@ -1,34 +1,34 @@
-﻿=== WpCursos ===
-Contributors: Caio Vinicius <para@caiovinicius.org>
-Donate link: http://caiovinicius.org
-Tags: cursos, catalogo de cursos, calendário, course, calendar
-Requires at least:3.8
-Tested up to:3.9
-Stable tag: 2.0
+﻿=== WpCourses ===
+Contributors: Colde <colde@colde.com.br>
+Donate link: http://colde.com.br
+Tags: courses, moodle, wordpress 4.0, calendar, calendar courses
+Requires at least:3.9
+Tested up to: 4.0
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WpCursos te ajuda a gerenciar seu catálogo de cursos e calendário de turmas.
+WpCursos helps you manage your course catalog and schedule of classes.
 
-== Description ==
+Description == ==
 
-WpCursos agorá e Woordle. WpCourses, é uma ferramenta para gerenciamento de catálogo de cursos. Ideal para empresas de treinamento,
-escolas e centro de treinamentos, o WpCursos permite você gerenciar e disponibilizar informações sobre seus
-cursos e calendário de turmas, e vagas.
+WpCourses, is a tool for managing course catalog. Ideal for training companies
+schools and training center, the WpCursos allows you to manage and display information about your
+courses and schedule of classes, and vacancies.
 
-Em breve estará disponível a versão pro com uma tonelada de novas funções e melhorias como:
+Will soon be available to pro with a ton of new features and improvements like version:
 
-* Venda seus cursos pelo Woocomerce. Crie um curso e sincronize com o Woocommerce, venda com todas as formas de pagamento que desejar.
-* Gerencie sua escola online, integrando o WpCpurses com o Moodle. Deixe que o Wordpress faça todo o papel burocrático como:
-* * Vender seus curso com o Woocommerce.
-* * Gerenciar matriculas de forma automática. Deixe que o WpCourses verifique o pagamento de uma matricula, e sincronizes os dados de usuário e matricula com o Moodle de forma automática.
-* * Faça toda parte administrativa pelo Wordpress deixando o Moodle apenas para o seu real papel. Crie cursos, categorias de cursos e turmas pelo Worpdress e o WpCourses sincroniza todos os dados de forma automática.
-* * Gerencie seus cursos por turmas.
-* * Central do aluno do seu site Wordpress. Um local especial para os alunos, onde eles podem ver suas notas, feedbacks, notificações, alteração de senha e muito mais.
-* * Automatização de tarabalho. Sempre que a operadora financeira confirmar o pagamento da compra de um curso, o WpCourses, faz todo o trabalho sujo como, alterar o status do pedido, sincronizar os dados do usuário do Wordpress com o Moodle, e notificar por e-mail que o alunos já pode começar a estudar.
-* * Turmas e matriculas agendadas. Crie uma nova turma e agende sua publicação. Assim que quer der a hora o WpCourses refaz todos trabalho.
-* Novas Matriculas. O aluno poderá se matricular em qualquer curso habilitado.
-* Entre outras mais.
+* Sell your courses by Woocomerce. Create a course and synchronize with WooCommerce, sale with all forms of payment they wish.
+* Manage your online school, integrating WpCpurses with Moodle. Let the Wordpress do all the bureaucratic paper:
+* Sell your course with WooCommerce.
+* Manage enrollments automatically. Let WpCourses check payment of a registration, and sincronizes user data and enrollment with Moodle automatically.
+* Make all administrative part by Wordpress Moodle leaving only its real role. Create courses, classes and courses and classes by Worpdress WpCourses synchronizes all data automatically.
+* Manage your courses for classes.
+* Student Central on your Wordpress site. A special place for students, where they can see their grades, feedback, notifications, password change, and more.
+* Automation tarabalho. Where financial operator confirm the payment for the purchase of a course, the WpCourses, does all the dirty work to change the status of the request, synchronize user data with Wordpress Moodle, and notify you by email that the students can already start studying.
+* Classes and Scheduled enrollments. Create a new class and schedule your publication. So you want to give the time WpCourses redo all the work.
+* New Enrollments. The student may enroll in any course enabled.
+* Among other more.
 
 
 
@@ -55,51 +55,15 @@ Você pode fazer a instalação pelo instalador de plugins do Wordpress.
 
 == Changelog ==
 
-= 0.2 =
-* Criação de Cursos
-* Criação de Categorias de Cursos
+= 1.0 =
+* Create Course and classes courses.
+* Add calendar courses by shortocode in anywhere page.
 
-= 0.5 =
-* Campos Personalizados de apresentação do Curso
 
-= 0.6 =
-* Criação de Calendários de turmas
-* Criação de turmas para o calendário
-
-= 0.7 =
-* Preencimento de dados de turma via ajax
-
- = 0.9 =
- * Adicionado Templates de Cursos, categoria de cursos, turmas e calendário
-
-= 1.0 = 
-* Adicionado Confiuração do plugin
-
-= 1.1 = 
-* Correção ma exibição do Calendário
-* Add shortcode para exibir calendário em posts e páginas.
-
-= 1.2 =
-* Corrigido retorno de exibição dos shortcodes
-
-= 1.3 = 
-* Corrigido bugs de shortcode de Calendários.
-
-= 1.4 =
-* Agora você pode inserir um formulário de pré-matricula nos cursos, turmas, páginas e posts.
-* Envio de notificação de nova pré-matricula para um e-mail cadastrado.
-* Email de notificação em HTML.
-* Página de visualizalçao de todas a pré-matriculas.
-* Melhorias de Desempenho.
-
-= 2.0 = 
-* WpCursos foi totalmente reescrito melhorando o uso e a segurança;
-* Melhorias na interface e arquitetura de classes
-* Reescrito para que aceite internacionalização de idioma.
 
 == Upgrade Notice ==
 
-= 2.0 =
-* Novas funções e melhorias de desempenho e segurança
+= 1.0 =
+* tested in Wordpress 3.9 and 4.0
 
 
