@@ -1,0 +1,137 @@
+
+.wpc_calendar {
+	width: 100%;
+	padding: 10px 0px;
+	margin: 15px 0;
+}
+
+.wpc_calendar h2.title_calendar {
+	color: #797979;
+	font-size: 1.2em;
+	padding-bottom: 5px;
+	text-shadow: 1px 1px 1px #ccc;
+}
+
+table.wpc_calendar_table {
+	width: 100%;
+	border: 1px solid #f5f5f5;
+	background: #fff;
+	box-shadow: 0px 0px 5px #cfcfcf;
+	font-size: 14px;
+	text-align: center;
+}
+
+table.wpc_calendar_table thead {
+	background: #ececec;
+	border-bottom: 1px solid #c0c0c0;
+	text-transform: none;
+}
+
+table.wpc_calendar_table th {
+	line-height: 2em;
+	padding: 0 5px;
+	text-align: center;
+	border: none;
+}
+
+table.wpc_calendar_table tr {
+	color: #797979;
+}
+
+table.wpc_calendar_table tr:hover {
+	background: #f8f8f8;
+}
+
+table.wpc_calendar_table tr {
+	border-bottom: 1px solid #ececec;
+}
+
+table.wpc_calendar_table td {
+	line-height: 2.5em;
+	padding: 0 5px;
+	border: none;
+}
+
+span.wpc_day {
+	font-size: 11px;
+	background: #f2f2f2;
+	padding: 2px;
+	border: 1px solid #f0f0f0	;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-o-border-radius; 2px;
+	border-radius: 2px;
+
+}
+
+.featured-course {
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.featured-img {
+	display: block;
+	width: 100%;
+}
+
+img.img-featured {
+	max-width:100%;
+	height:auto;
+}
+
+.course_featured_content {
+	margin-top: 25px;
+}
+
+.course_featured_title, .the_course_excerpt {
+	display: inline;
+	float: left;
+}
+
+.course_featured_title {
+	width: 40%;
+}
+
+.the_course_excerpt {
+	width: 60%;
+	height: 63px;
+	overflow: hidden;
+	margin-bottom: 5px;
+	line-height: 30px;
+}
+
+.course_list_item {
+	float: left;
+	width: 25%;
+  	min-height: 1px;
+  	padding-right: 15px;
+  	padding-left: 15px;
+}
+
+.more_courses {
+	margin-top: 30px;
+}
+
+.course_list_item_img {
+	height: 200px;
+	overflow: hidden;
+}
+
+.wpc_head_course {
+	padding: 25px 0px;
+	background: #eee;
+}
+
+.wpc_course_title {
+	padding: 20px 0px;
+	background: #eee;
+}
+
+.wpc_course_title h1 {
+	font-size: 3.1em;
+	padding-top: 30px;
+}
+
+.wpc_course_content {
+	padding: 10px;
+	padding: 25px 0;
+}

@@ -1,0 +1,112 @@
+/**
+ * My Tabs
+ */
+
+ /**
+  * Meta Box with tabs
+  */
+
+a:focus {
+	box-shadow: none;
+}
+
+#wpc_course_tabs {
+	margin: -6px 0 0 -12px;
+	padding: 0px;
+	display: table;
+	background: #f5f5f5;
+}
+
+#wpc_settings {
+	margin: -6px 0 0 -12px;
+	padding: 0px;
+	display: table;
+	background: #fff;
+}
+
+.wpc_menu_tabs {
+ 	background: #f5f5f5;
+	line-height: 1em;
+	width: 190px;
+	float: left;
+	padding: 0 0 10px 0;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+ }
+
+ .wpc_the_tabs {
+ 	float: left;
+ 	width: 680px;
+ 	min-height: 250px;
+ 	margin-left: 0px;
+ 	padding-left: 30px;
+ 	background: #fff;
+ }
+.wpc_the_settings {
+ 	float: left;
+ 	width: 855px;
+ 	min-height: 250px;
+ 	margin-left: 10px;
+ 	padding: 20px;
+ 	background: #fff;
+ }
+
+
+ul.wpc_tabs {
+	background: #f5f5f5;
+	float: left;
+	margin: 0;
+	width: 170px;
+	position: relative;
+	padding: 0 0 10px;
+}
+
+ul.wpc_tabs li {
+	padding: 10px;
+	margin: 0;
+	width: 100%;
+	background: #f5f5f5;
+	text-decoration: none;
+	border-bottom: 1px solid #ececec;
+}
+
+ul.wpc_tabs li a {
+	display: block;
+	line-height: 18px!important;
+	text-decoration: none;
+}
+
+ul.wpc_tabs li a:visited, ul.wpc_tabs li a:active {
+	border: none;
+}
+
+
+ul.wpc_tabs li.ui-state-active {
+	border-color: #DFDFDF;
+	position: relative;
+	background-color: #fff;
+	color: #555;
+	margin: 0 -1px 0 0;
+}
+
+.form-line {
+	float: left;
+	width: 100%;
+	border-bottom: 1px solid #f2f2f2;
+	padding: 10px 0;
+}
+
+.form-label {
+	float: left;
+	width: 250px;
+}
+
+.form-field {
+	float: left;
+}
+
+#wpc_select {
+	float: left;
+	width: 550px !important;
+}
