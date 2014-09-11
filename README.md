@@ -1,4 +1,4 @@
-WpCourses-Pro
+WpCourses
 =============
 
-Gerenciador de Escola online
+WpCourses helps you manage your course catalog and schedule of classes.
