@@ -58,8 +58,7 @@ class WpCourses {
 	 */
 	public function action_links( $links ) {
 		return array_merge( array(
-			'<a href="' . admin_url( 'admin.php?page=wpcourses_settings' ) . '">' . __( 'Settings', 'wpcourses' ) . '</a>',
-			'<a href="' . admin_url( 'http://colde.com.br/wpcourses' ) . '">' . __( 'Get Pro Support and License', 'wpcourses' ) . '</a>',
+			'<a href="http://colde.com.br/wpcourses">' . __( 'Get Pro Support and License', 'wpcourses' ) . '</a>',
 		), $links );
 	}	
 	
