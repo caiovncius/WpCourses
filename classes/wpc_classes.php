@@ -134,7 +134,7 @@ class WPC_Classes {
 		
 		global $pagenow, $wpdb;	
 
-		if ( is_admin() && $pagenow=='edit.php' && !empty($_GET['post_type']=='classes') && $_GET['s'] != '') {
+		if ( is_admin() && $pagenow=='edit.php' && !empty( $_GET['post_type'] )=='classes' && $_GET['s'] != '') {
 			$where = preg_replace(
 				"/\(\s*".$wpdb->posts.".post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
 				"(".$wpdb->posts.".post_title LIKE $1) OR (".$wpdb->postmeta.".meta_value LIKE $1)", $where );
