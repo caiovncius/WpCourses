@@ -23,6 +23,7 @@ class WPC_Meta_boxes {
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ));
 		add_action('save_post', array( $this, 'after_save_course'));
 		add_action('save_post', array( $this, 'after_save_classes'));
+		add_action('save_post', array( $this, 'after_save_enrollment'));
 	}
 
 	/**
@@ -34,7 +35,10 @@ class WPC_Meta_boxes {
 		add_meta_box( 'wpc_courses_config_meta_box' , __('More Settings of this course', 'wpcourses'), array($this, 'course_meta_box_sync'), 'courses', 'normal', 'core');
 
 		// Add meta box to configure classes
-		add_meta_box( 'wpc_classes_config_meta_box' , __('Class Settings', 'wpcourses'), array($this, 'classes_meta_box_sync'), 'classes', 'normal', 'core');
+		add_meta_box( 'wpc_classes_config_meta_box' , __('Class Settings', 'wpcourses'), array($this, 'classes_meta_box_sync'), 'classes', 'hight', 'core');
+
+		// Add meta box to configure enrollment
+		add_meta_box( 'wpc_enrollment_config_meta_box' , __('Enrollment Setting', 'wpcourses'), array($this, 'enrollment_meta_box_sync'), 'enrollment', 'normal', 'core');
 
 	}
 
@@ -57,6 +61,7 @@ class WPC_Meta_boxes {
 			<div class="wpc_menu_tabs">
 				<ul class="wpc_tabs">
 					<li class="active"><a href="#wpctab1"><?php echo __('More information', 'wpcourses'); ?></a></li>
+					<li><a href="#wpctab2"><?php echo __('Sale this course', 'wpcourses'); ?></a></li>
         		</ul>
 			</div><!--- wpc_menu_tabs -->
 			<div class="wpc_the_tabs">
@@ -82,7 +87,48 @@ class WPC_Meta_boxes {
 					 	<textarea name="_wpc_course_requirements" id="_wpc_course_requirements" cols="40" rows="3"><?php echo $meta_wpc_course_requirements[0]; ?></textarea>
 					 	</div><!--- form-field -->
 					 </div><!--- form-line -->
-				</div><!--- wpctbs1 -->				
+				</div><!--- wpctbs1 -->
+
+				<div id="wpctab2">
+					<?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) : ?>
+					 <div class="form-line">
+					 	<div class="form-label">
+					 		<label for="_wpc_enable_sale_course">
+					 			<?php echo __('Sale this Course with Woocommerce', 'wpcourses'); ?>
+					 		</label>
+					 	</div><!--- form-label -->
+					 	<div class="form-fields">
+					 		<input type="checkbox" name="_wpc_enable_sale_woocommerce"  id="wpc_enable_sale_woocommerce" <?php if ( $meta_wpc_enable_sale_woocommerce[0] == 'on' ) echo 'checked'; ?> />
+					 	</div><!--- form-fields -->
+					 </div><!--- form-line -->
+
+					 <div id="wpc_show_settings_woocommerce" style="display:none;">
+					 	<div class="form-line">
+					 		<div class="form-label">
+					 			<label for="_wpc_enable_sale_course">
+					 				<?php echo __('SKU', 'wpcourses'); ?>
+					 			</label>
+					 		</div><!--- form-label -->
+					 		<div class="form-fields">
+						 		<input type="text" name="_wpc_course_shop_sku" value="<?php echo $meta_wpc_course_shop_sku[0]; ?>"/>
+						 	</div><!--- form-fields -->
+						 </div><!--- form-line -->
+
+						 <div class="form-line">
+					 		<div class="form-label">
+					 			<label for="_wpc_enable_sale_course">
+					 				<?php echo __('Price', 'wpcourses'); ?>
+					 			</label>
+					 		</div><!--- form-label -->
+					 		<div class="form-fields">
+						 		<input type="text" name="_wpc_course_shop_price" value="<?php echo $meta_wpc_course_shop_price[0]; ?>"/>
+						 	</div><!--- form-fields -->
+						 </div><!--- form-line -->
+					 </div><!--- wpc_show_settings_woocommerce -->
+					<?php else : ?>
+							<p><?php echo __('You need Woocommerce installed or enabled.', 'wpcourses'); ?> </p>
+					<?php endif; ?>
+				</div><!--- wpctab2 -->			
 
 			</div><!--- wpc_the_tabs -->
 
@@ -267,6 +313,135 @@ class WPC_Meta_boxes {
 
 		if(isset($_POST['_wpc_class_more_information']))
 			update_post_meta($post_id, '_wpc_class_more_information', $_POST['_wpc_class_more_information']);
+	}
+
+	/**
+	 * Enrollment matabox
+	 */
+
+	public function enrollment_meta_box_sync () {
+
+		global $post;
+
+		$courses = get_posts ( array ( 
+				'post_type' 	=> 'courses',
+				'post_status' 	=> 'publish'
+			)
+		);
+
+		$classes = get_posts ( array (
+				'post_type' 	=> 'classes',
+				'post_status' 	=> 'publish'
+			)
+		);
+
+		// get values to settings
+		$meta_wpc_enrol_course_id = get_post_meta ( $post->ID, '_wpc_enrol_course_id');
+		$meta_wpc_enrol_info = get_post_meta ( $post->ID, '_wpc_enrol_info');
+		$meta_class_id = get_post_meta ($post->ID, '_wpc_enrol_class_id');
+	?>
+	<div id="wpc_settings">
+
+
+		<div class="wpc_the_settings">
+			<div class="form-line">
+				<div class="form-label">
+					<label for="_wpc_enrol_course_id">
+						<?php echo __('Student', 'wpcourses');?>
+					</label>
+				</div><!--- form-label -->
+				<div class="form_field">
+					<div id="wpc_select">
+						<?php 
+							$argsSelectUsers = array(
+								'orderby' 	=> 'display_name',
+								'multi' 		=> false,
+								'id' 		=> 'wpc_enrols_user_id',
+								'name' 		=> '_wpc_enrol_user_id',
+								'selected'                => 1,
+						    	'include_selected'        => true,
+								'exclude' 	=> array(
+									1,
+								)
+							);
+
+							wp_dropdown_users($argsSelectUsers);
+						?>
+					</div><!--- wpc_select -->
+				</div><!--- form-fields -->
+			</div><!--- form-line -->
+
+			<div class="form-line">
+				<div class="form-label">
+					<label for="_wpc_enrol_course_id">
+						<?php echo __('Course', 'wpcourses');?>
+					</label>
+				</div><!--- form-label -->
+				<div class="form_field">
+					<div id="wpc_select">
+						<select name="_wpc_enrol_course_id" id="wpc_enrol_course_id">
+							<option><?php echo __('Select one course', 'wpcourses'); ?></option>
+							<?php if ( count ($courses)  == 0) : ?>
+								<option selected="selected"><?php echo __('No course registred', 'wpcourses'); ?></option>
+							<?php else : ?>
+								<?php foreach ( $courses as $course ) : ?>
+									<option value="<?php echo $course->ID; ?>" <?php if ( $meta_wpc_enrol_course_id[0] == $course->ID) echo 'selected="selected"'; ?> ><?php echo $course->post_title; ?></option>
+								<?php endforeach; ?>
+							<?php endif; ?>
+						</select>
+					</div><!--- wpc_select -->
+				</div><!--- form-fields -->
+			</div><!--- form-line -->
+
+			<div class="form-line">
+				<div class="form-label">
+					<label for="_wpc_enrol_info">
+						<?php echo __('Observations', 'wpcourses');?>
+					</label>
+				</div><!--- form-label -->
+				<div class="form_field">
+					<div id="wpc_select">
+						<textarea name="_wpc_enrol_info" id="wpc_enrol_info" cols="61" rows="3"><?php echo $meta_wpc_enrol_info[0]; ?></textarea>
+					</div><!--- wpc_select -->
+				</div><!--- form-fields -->
+			</div><!--- form-line -->
+
+		</div><!--- wpc_the_settings -->
+	</div><!--- wpc_settings -->
+	<?php
+	}
+
+	/**
+	 * Saving enrollment 
+	 */
+	public function after_save_enrollment ( $post_id ) {
+
+		global $post;
+		global $wpdb;
+
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+			return;
+		}
+
+		if(isset($_POST['_wpc_enrol_user_id']))
+			update_post_meta($post_id, '_wpc_enrol_user_id', $_POST['_wpc_enrol_user_id']);
+
+		if(isset($_POST['_wpc_enrol_course_id']))
+			update_post_meta($post_id, '_wpc_enrol_course_id', $_POST['_wpc_enrol_course_id']);
+
+		if(isset($_POST['_wpc_enrol_class_id']))
+			update_post_meta($post_id, '_wpc_enrol_class_id', $_POST['_wpc_enrol_class_id']);
+
+		if(isset($_POST['_wpc_enrol_info']))
+			update_post_meta($post_id, '_wpc_enrol_info', $_POST['_wpc_enrol_info']);
+
+		if ($post->post_type == 'enrollment' ) {
+
+			// update enrollmetnt title
+			$where = array ( 'ID' => $post_id );
+			$wpdb->update( $wpdb->posts, array ( 'post_title' => '#'. $post_id ), $where );
+		}
+
 	}
 }
 

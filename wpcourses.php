@@ -3,7 +3,7 @@
  * Plugin Name: WpCourses
  * Plugin URI: http://colde.com.br/wpcourses
  * Description: WpCourses it's a solution for Online schools and training centers, for show, and sale yours courses.
- * Version: 2.0
+ * Version: 1.2
  * Text Domain: wpcourses
  * Author: Colde Codong <colde@colde.com.br>
  * Author URI: http://colde.com.br
@@ -77,6 +77,7 @@ class WpCourses {
 		include_once('classes/wpc_classes.php');
 		include_once('classes/wpc_shortcodes.php');
 		include_once('classes/wpc_templates.php');
+		include_once('classes/wpc_woocommerce.php');
 
 		// Include functions hooks
 		include_once('classes/wpc_content.php');

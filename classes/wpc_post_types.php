@@ -105,6 +105,44 @@ class WpCourses_Post_types {
 				'capability_type'    	=> 'post'
 			)
 		);
+
+		register_post_type ('enrollment', array(
+				'labels' => array(
+					'name'             	   => _x( 'Enrollments', 'post type general name'),
+					'singular_name'        => _x( 'Enrollments', 'post type singular name'),
+					'menu_name'            => _x( 'Enrollments', 'admin menu', 'wpcourses'),
+					'name_admin_bar'       => _x( 'New ', 'add new on admin bar', 'wpcourses'),
+					'add_new'              => _x( 'New Enrollment', 'courses' ),
+					'add_new_item'         => __( 'New Enrollment', 'courses', 'wpcourses'),
+					'new_item'             => __( 'New Enrollment', 'wpcourses' ),
+					'edit_item'            => __( 'Edit Enrollment', 'wpcourses'),
+					'view_item'            => __( 'View Enrollment', 'wpcourses'),
+					'all_items'            => __( 'All Enrollments', 'wpcourses'  ),
+					'search_items'         => __( 'Search Enrollments', 'wpcourses'),
+					'parent_item_colon'    =>'' ,
+					'not_found'            => __( 'Enrollments not found.', 'wpcourses'),
+					'not_found_in_trash'   => __( 'Enrollments not found in trash.', 'wpcourses' ),
+				),
+				'hierarchical'          => true,
+				'description'           => 'WpCourses Enrollment Courses',
+				'supports'              => array(
+								'revision'				
+							 ),
+				'public'                => true,
+				'show_ui'               => true,
+				'show_in_menu'          => true,
+				'show_in_nav_menus'     => true,
+				'publicly_queryable'    => true,
+				'exclude_from_search'   => false,
+				'has_archive'           => true,
+				'query_var'         	=> true,
+				'rewrite'	            => array( 'slug' => 'enrollment' ),
+				'can_export'         	=> true,
+				'rewrite'            	=> true,
+				'menu_position' 	 	=> null,
+				'capability_type'    	=> 'post'
+			)
+		);
 	}
 
 	public static function register_taxonomies () {

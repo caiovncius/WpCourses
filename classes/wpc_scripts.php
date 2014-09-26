@@ -64,19 +64,6 @@ class WpCourses_Scripts {
 				}
 			});
 
-			// show moodle settings
-			jQuery("#wpc_enable_course_moodle").on('change', function(){	
-
-				if (jQuery("#wpc_enable_course_moodle:checked")) {	
-
-					jQuery("#wpc_show_settings_moodle").toggle("fast");
-				}
-				else {	
-
-					jQuery("#wpc_show_settings_moodle").toggle("fast");
-				}
-			});
-
 			// add datepicker to dates fields
 			jQuery('.wpc_start_datepicker').datepicker({
     			format: "yyyy-mm-dd",

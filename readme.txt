@@ -1,20 +1,26 @@
 ﻿=== WpCourses ===
-Contributors: Colde <colde@colde.com.br>
+Contributors: caiovncius <caio@colde.com.br>
 Donate link: http://colde.com.br
 Tags: courses, moodle, wordpress 4.0, calendar, calendar courses
 Requires at least:3.9
 Tested up to: 4.0
-Stable tag: 1.0
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WpCursos helps you manage your course catalog and schedule of classes.
-
-Description == ==
 
 WpCourses, is a tool for managing course catalog. Ideal for training companies
-schools and training center, the WpCursos allows you to manage and display information about your
-courses and schedule of classes, and vacancies.
+schools and training center
+
+== Description ==
+
+WpCourses, is a tool for managing course catalog. Ideal for training companies schools and training center, the WpCursos allows you to manage and display information about your courses and schedule of classes, and vacancies.
+
+New Features in 1.2 version:
+* Create Course Product in Woocommerce in create or edit course.
+* Sale course in Woocommerce
+* Create pre enrollment in new order created
+* Publish enrollment in Woocommerce order changed status to completed.
 
 Will soon be available to pro with a ton of new features and improvements like version:
 
@@ -31,39 +37,36 @@ Will soon be available to pro with a ton of new features and improvements like v
 * Among other more.
 
 
-
 == Installation ==
 
-Para instalar o WpCursos é muito simples.
-
-e.g.
-
-1. descompacte o pacote e faça o upload da pasta wpcursos para a pasta `/wp-content/plugins/`
-2. Acesse o gerenciador de plugins do wordpress e ative o plugin.
-
-Você pode fazer a instalação pelo instalador de plugins do Wordpress.
+unzip the package and upload the wpcursos folder to the /wp-content/plugins or use default install Wordpress panel.
 
 == Frequently Asked Questions ==
- 
- = O WpCursos é livre? = 
-
- Sim, ele é mantido sob licença  GPLv2
 
 == Screenshots ==
-1 - Screenshot de criação de cursos. assets/screenshot/screenshot-1.jpg
-2 - Screenshot de criação de turmas. assets/screenshot/screenshot-2.jpg
 
 == Changelog ==
 
-= 1.0 =
+== 1.0 ==
+
 * Create Course and classes courses.
 * Add calendar courses by shortocode in anywhere page.
 
-
+== 1.2 ==
+* Create Course Product in Woocommerce in create or edit course.
+* Sale course in Woocommerce
+* Create pre enrollment in new order created
+* Publish enrollment in Woocommerce order changed status to completed.
 
 == Upgrade Notice ==
 
-= 1.0 =
-* tested in Wordpress 3.9 and 4.0
+== 1.0 ==
+
+* Tested in Wordpress 3.9 and 4.0
+
+== 1.2 == 
+* Tested in Wordpress 3.9 and 4.0
+* Fix bug 
+* new features
 
 
