@@ -4,7 +4,7 @@ Donate link: http://colde.com.br
 Tags: courses, moodle, wordpress 4.0, calendar, calendar courses
 Requires at least:3.9
 Tested up to: 4.0
-Stable tag: 1.2
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ New Features in 1.2 version:
 * Create pre enrollment in new order created
 * Publish enrollment in Woocommerce order changed status to completed.
 
-Will soon be available to pro with a ton of new features and improvements like version:
+Get New features in Pro Version:
 
 * Sell your courses by Woocomerce. Create a course and synchronize with WooCommerce, sale with all forms of payment they wish.
 * Manage your online school, integrating WpCpurses with Moodle. Let the Wordpress do all the bureaucratic paper:
@@ -35,6 +35,8 @@ Will soon be available to pro with a ton of new features and improvements like v
 * Classes and Scheduled enrollments. Create a new class and schedule your publication. So you want to give the time WpCourses redo all the work.
 * New Enrollments. The student may enroll in any course enabled.
 * Among other more.
+
+Buy a pro version with this all features and 3 more: http://codecanyon.net/item/wpcourses-pro/9170404
 
 
 == Installation ==
@@ -58,6 +60,9 @@ unzip the package and upload the wpcursos folder to the /wp-content/plugins or u
 * Create pre enrollment in new order created
 * Publish enrollment in Woocommerce order changed status to completed.
 
+== 1.2.3 ==
+* Bugs Fixed and best performance
+
 == Upgrade Notice ==
 
 == 1.0 ==
@@ -69,4 +74,7 @@ unzip the package and upload the wpcursos folder to the /wp-content/plugins or u
 * Fix bug 
 * new features
 
+== 1.2.3 == 
+* Tested in Wordpress 3.9 and 4.0
+* Bugs Fixed 
 

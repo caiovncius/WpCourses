@@ -2,8 +2,8 @@
 /**
  * Plugin Name: WpCourses
  * Plugin URI: http://colde.com.br/wpcourses
- * Description: WpCourses it's a solution for Online schools and training centers, for show, and sale yours courses.
- * Version: 1.2
+ * Description: WpCourses it's a solution for Online schools and training centers, for show, and sale yours courses. Buy a pro version with this all features and <a href="http://codecanyon.net/item/wpcourses-pro/9170404" target="_blank">3 more</a>.
+ * Version: 1.2.3
  * Text Domain: wpcourses
  * Author: Colde Codong <colde@colde.com.br>
  * Author URI: http://colde.com.br
@@ -58,6 +58,7 @@ class WpCourses {
 	 */
 	public function action_links( $links ) {
 		return array_merge( array(
+			'<a href="http://colde.com.br/wpcourses">' . __( 'Buy Pro Version', 'wpcourses' ) . '</a>',
 			'<a href="http://colde.com.br/wpcourses">' . __( 'Get Pro Support and License', 'wpcourses' ) . '</a>',
 		), $links );
 	}	
